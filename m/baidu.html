@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Baidu</title>
+
+    <style type="text/css">
+    body {
+        margin: 0 0;
+        background-color: #666;
+        background-repeat:no-repeat;
+        /*background-position: center center;*/
+        /*background-attachment: fixed;*/
+        /*background-size: 100% 100%;*/
+    }
+    .div-searchbox {
+        /*background-color: #555;*/
+        text-align: center;
+        padding-top: 30%;
+        /*padding-left: 100px;*/
+    }
+    .div-baidu {
+        font-size:80px;
+        color: #FFF;
+        margin-bottom: 10px;
+    }
+
+    .tb1 {
+        width: 90%;
+        background-color: #FFF;
+        margin-left: auto;
+        margin-right: auto;
+        border: 0;
+    }
+    td {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .td1 {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .td2 {
+        text-align: center;
+    }
+
+    .input-box {
+        border: 0;
+        width: 100%;
+        font-size: 50px;
+        outline:none;
+    }
+    .btn-submit {
+        border: 0;
+        background-color: #007daa;
+        font-size: 40px;
+    }
+
+    /*.div-bgImage {
+        width: 100%;
+        height: 100%;
+    }
+    .div-bgImage {
+        
+        width: 100%;
+        height: 100%;
+        background-repeat:no-repeat;
+        background-attachment: fixed;
+        background-position: 100% 100%;
+        background-size: 100% 100%;
+        z-index: -1;
+    }*/
+    </style>
+</head>
+<body background="https://www.dujin.org/sys/bing/1366.php">
+<form action="https://www.baidu.com/baidu" target="_blank">
+    <div class="div-searchbox">
+        <div class="div-baidu">Baidu</div>
+        <table class="tb1" cellspacing="0px">
+            <tr>
+                <td class="td1">
+                    <input type="text" class="input-box" name="word" size="30">
+                </td>
+                <td class="td2"style="background-color: #007daa;">
+                    <button type="submit" class="btn-submit" >Go</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+<!--<img class="img-bgImage" src="https://www.dujin.org/sys/bing/1920.php">-->
+
+<script src="../jQuery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".td2").css("width", $("tr").height());
+        // $("body").css("background", "url(test.jpg)");
+        
+        // var screen_width = window.screen.width * window.devicePixelRatio;
+        // var screen_height = window.screen.height * window.devicePixelRatio;
+        var screen_width = $(window).width();
+        var screen_height = $(window).height();
+        
+        // alert(screen_width + "x" + screen_height);
+        $("body").css("background-size", (1366 / 768 * screen_height) + "px " + screen_height + "px");
+        // $("body").css("background-size", "1920px 1080px");
+        
+        $(".input-box").focus(function(){
+            $(".div-baidu").hide();
+            $(".div-searchbox").css("padding-top", "5%");
+        });
+        $(".input-box").blur(function(){
+            $(".div-baidu").show();
+            $(".div-searchbox").css("padding-top", "30%");
+        });
+
+    });
+</script>
+
+<!--"https://www.dujin.org/sys/bing/1920.php"-->
+</body>
+</html>
